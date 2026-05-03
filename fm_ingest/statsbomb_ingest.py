@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from pathlib import Path
+from typing import Optional
 
 import pandas as pd
 from statsbombpy import sb
@@ -28,7 +31,7 @@ def get_matches(competition_id: int, season_id: int) -> pd.DataFrame:
 def save_matches_to_csv(
     competition_id: int,
     season_id: int,
-    filename: str | None = None,
+    filename: Optional[str] = None,
 ) -> Path:
     """
     Выгрузить матчи в CSV в data/raw и вернуть путь к файлу.
